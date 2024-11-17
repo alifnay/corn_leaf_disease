@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Corn Disease Detector</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+    </style>
+</head>
+<body class="min-h-screen bg-gradient-to-b from-[#FDFADB] to-white">
+    <!--Navbar-->
+    <nav class="flex items-center justify-between py-8 px-16">
+        <div>
+            <img src="static\images\logo.png" alt="" class="w-12 h-12">
+        </div>
+        <div class="flex items-center space-x-12">
+            <div class="font-bold">
+                Home
+            </div>
+            <a href="#deteksi-penyakit" class="text-[#003B06]">
+                Deteksi Penyakit
+            </a>
+        </div>
+    </nav>
+
+
+    <!--Landing-->
+    <div class="flex max-w-7xl mx-auto grid grid-cols-5 py-16">
+        <div class="col-span-2">
+            <img src="static\images\petani_3d.png" alt="">
+        </div>
+        <div class="col-span-3 py-8 grid-rows-5 space-y-8">
+            <div class="font-bold space-y-4 row-span-2">
+                <div class="flex items-center space-x-4">
+                    <div class="text-5xl">Smart Corn</div> 
+                    <img src="static\images\logo_img.png" alt="" class="w-12 h-16">
+                </div>
+                <div class="text-xl text-[#3E8F5C]">Solusi Pintar untuk Petani Jagung</div>
+            </div>
+            <div class="row-span-2 pb-20">
+                Pantau Kesehatan Tanaman, Deteksi Penyakit dan Tingkatkan 
+                Hasil Panen anda dengan Teknologi Canggih
+            </div>
+            <div>
+                <a href="#deteksi-penyakit">
+                    <button class="w-48 h-12 bg-[#3E8F5C] text-white rounded-lg hover:bg-[#2E7047] hover:scale-105 hover:shadow-lg transition-transform duration-300 ease-in-out">
+                        Mulai Sekarang
+                    </button>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!--Deteksi Jagung-->
+    <div id="deteksi-penyakit" class="max-w-7xl mx-auto py-16 space-y-12">
+        <div class="flex space-x-12 items-center">
+            <div class="w-2 h-16 bg-[#FFCB39] rounded-lg"></div>
+            <div class="grid-rows-2">
+                <div class="text-xl font-semibold">
+                    Deteksi Penyakit
+                </div>
+                <div>
+                    Periksa penyakit tanaman jagung Anda!
+                </div>
+            </div>
+        </div>
+
+        <div class="relative">
+            <div class="absolute inset-0 bg-gradient-to-r from-[#47AF64] to-transparent via-transparent via-30% to-90% [background-size:200%] h-full rounded-lg"></div>
+            <img src="static/images/deteksi_jagung.png" alt="" class="w-full">    
+        </div>
+
+        <div class="flex justify-center mt-8">
+            <a href="{{ url_for('detection') }}">
+                <button class="w-48 h-12 bg-[#FFCB39] text-white rounded-lg hover:bg-[#FFB030] hover:scale-105 hover:shadow-lg transition-transform duration-300 ease-in-out">
+                    Cek Sekarang!
+                </button>    
+            </a>
+        </div>        
+    </div>
+
+    <footer>
+        <div class="max-w-7xl mx-auto pt-36 grid grid-cols-3 space-x-12">
+            <div class="grid-rows-2 space-y-4">
+                <div>
+                    <img src="static\images\logo.png" alt="">
+                </div>
+                <div>
+                    Merupakan sebuah aplikasi Web untuk membantu petani dan juga masyarakat yang ingin membudidayakan jagung. Kami memprioritaskan fitur yang mudah digunakan oleh siapapun dan dimanapun.
+                </div>
+            </div>
+            <div class="grid-rows-2 space-y-8">
+                <div class="font-semibold">Halaman</div>
+                <div>Deteksi Penyakit</div>
+            </div>
+            <div class="grid-rows-3 space-y-8">
+                <div class="font-semibold">Hubungi Kami</div>
+                <div>Jl. jalan mulu jadian kaga, Yogyakarta, London, Belgia</div>
+                <div class="grid grid-cols-2 font-light">
+                    <div>Telepon</div>
+                    <div>: +62-888-8888-888</div>
+                    <div>Office</div>
+                    <div>: 0274 444 44444</div>
+                    <div>Email</div>
+                    <div>: help@smartcorn.com</div>
+                </div>
+            </div>
+        </div>
+        <div class="bg-[#47AF64] h-20 mt-16 flex items-center justify-center">
+            <div class="font-bold text-white">Alif Naywa 2024</div>
+        </div>
+    </footer>
+</body>
+</html>
+
+
+

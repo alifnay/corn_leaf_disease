@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Disease Detector</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+    </style>
+</head>
+<body class="min-h-screen bg-gradient-to-b from-[#FDFADB] to-white">
+    <!--Navbar-->
+    <nav class="flex items-center border-b-2 border-gray-500 justify-between py-4 px-16">
+        <div>
+            <a href="{{ url_for('index') }}">
+                <img src="static\images\logo.png" alt="" class="w-12 h-12">
+            </a>
+        </div>
+        <div class="flex items-center space-x-12">
+            <a href="{{ url_for('index') }}">
+                <div class="text-[#003B06]">
+                    Home
+                </div>
+            </a>
+            <a href="" class="text-[#003B06] font-bold">
+                Deteksi Penyakit
+            </a>
+        </div>
+    </nav>
+    
+    <div class="max-w-7xl mx-auto py-16 space-y-12">
+        <div class="flex space-x-12 items-center">
+            <div class="w-2 h-16 bg-[#FFCB39] rounded-lg"></div>
+                <div class="text-2xl font-semibold">
+                    Deteksi Penyakit >
+                </div>
+                <div class="text-2xl font-light">
+                    Identifikasi
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="max-w-5xl mx-auto bg-[#E6F1E8] rounded-2xl p-8 space-y-4 shadow-xl mb-20">
+        <div class="font-bold text-lg">
+            Deteksi
+        </div>
+        <div class="font-light text-sm">
+            Tambahkan foto disini, maksimal 10MB
+        </div>
+        <div id="drop-area" class="w-full h-80 bg-white rounded-lg border-2 border-dashed border-[#FFCB39] flex items-center justify-center relative">
+            <!-- Drag & Drop Area -->
+            <form id="upload-form" action="/predict" method="POST" enctype="multipart/form-data" class="text-center flex flex-col items-center space-y-4">
+                <img src="static/images/folder.png" alt="Folder Icon" class="w-16 h-16">
+                <div class="text-[#FFCB39] font-medium">
+                    Drag & drop file here or click to upload
+                </div>
+                <button type="submit" class="bg-white text-[#FFCB39] border-2 border-[#FFCB39] font-medium px-4 py-2 rounded-lg hover:bg-[#FFCB39] hover:text-white">
+                    Upload
+                </button>
+            </form>
+        </div>     
+        <div class="font-light text-sm">hanya mendukung png, jpeg, jpg</div>
+        <div class="flex justify-end space-x-4">
+            <button class="bg-white p-2 rounded-lg border-2 border-gray w-20 hover:scale-105 transition duration-300 ease-in-out">
+                Cancel
+            </button>
+            <a href="{{ url_for('result') }}">
+                <button class="bg-[#FFCB39] text-white rounded-lg p-2 w-20 hover:bg-[#E6B832] hover:scale-105 transition duration-300 ease-in-out">
+                    Next
+                </button>
+            </a>
+        </div>        
+    </div>
+
+    <!-- <button type="submit">Detect</button> -->
+</body>
+</html>
