@@ -1,38 +1,32 @@
-<!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Disease Detector</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        body {
-            font-family: 'Poppins', sans-serif;
-        }
-    </style>
-</head>
-<body class="min-h-screen bg-gradient-to-b from-[#FDFADB] to-white">
-    <!-- Navbar -->
-    <nav class="flex items-center border-b-2 border-gray-500 justify-between py-4 px-16">
-        <div>
-            <a href="/">
-                <img src="static/images/logo.png" alt="" class="w-12 h-12">
-            </a>
+<style>
+    .bg-healthy {
+        background-color: #3E8F5C;
+        opacity: 50%;
+    }
+    .bg-disease {
+        background-color: #FF0000;
+        opacity: 50%;
+    }
+</style>
+<div class="max-w-7xl mx-auto py-16 space-y-12">
+    <div class="flex space-x-12 items-center">
+        <div class="w-2 h-16 bg-[#FFCB39] rounded-lg"></div>
+        <div class="grid-rows-2">
+            <div class="text-xl font-semibold">
+                Deteksi Penyakit
+            </div>
+            <div>
+                Periksa penyakit tanaman jagung Anda!
+            </div>
         </div>
-        <div class="flex items-center space-x-12">
-            <a href="/" class="text-[#003B06]">Home</a>
-            <a href="#" class="text-[#003B06] font-bold">Deteksi Penyakit</a>
-        </div>
-    </nav>
-
-    <!-- Form Upload -->
+    </div>
     <div class="max-w-5xl mx-auto bg-[#E6F1E8] rounded-2xl p-8 space-y-4 shadow-xl mb-20 mt-10">
         <form id="upload-form" action="/detection" method="POST" enctype="multipart/form-data" class="space-y-6">
             <div class="font-bold text-lg">Deteksi</div>
             <div class="font-light text-sm">Tambahkan foto di sini, maksimal 10MB</div>
             <div class="w-full h-80 bg-white rounded-lg border-2 border-dashed border-[#FFCB39] flex flex-col items-center justify-center space-y-4">
                 <img src="static/images/folder.png" alt="Folder Icon" class="w-16 h-16">
-                <span class="text-[#FFCB39] font-medium">Drag & drop file here or click to upload</span>
+                <span class="font-medium">Upload foto daun jagung yang ingin dideteksi</span>
                 <!-- Tombol kustom untuk memilih file -->
                 <label for="file-upload" class="bg-white text-[#FFCB39] border-2 border-[#FFCB39] font-medium px-4 py-2 rounded-lg hover:bg-[#FFCB39] hover:text-white cursor-pointer">
                 Pilih File
@@ -49,26 +43,57 @@
         {% if error %}
             <div class="text-red-500 mt-4">{{ error }}</div>
         {% endif %}
+    </div>
 
-        <!-- Tampilkan pesan gambar berhasil di upload -->
-        {% if file_uploaded %}
-            <div class="text-green-500 mt-4">Gambar berhasil di upload</div>
+    <!-- Tampilkan Hasil Deteksi -->
+    {% if predicted_class %}
+    <div class="flex space-x-12 items-center pt-12">
+        <div class="w-2 h-16 bg-[#FFCB39] rounded-lg"></div>
+        <div class="grid-rows-2">
+            <div class="text-xl font-semibold">
+                Deteksi Penyakit
+            </div>
+            <div>
+                Hasil Diagnosa
+            </div>
+        </div>
+    </div>
+    <!-- Informasi Prediksi -->
+    <div class="flex w-full h-16 p-4 rounded-2xl items-center shadow-lg {% if predicted_class == 'Healthy' %}bg-healthy{% else %}bg-disease{% endif %}">
+        <svg class="w-12 h-12" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+            <circle cx="12" cy="12" r="10" fill="#FFCB39" />
+            <path fill="#FFFFFF" d="M15.707 10.707a1 1 0 0 0-1.414-1.414L11 12.586l-1.793-1.793a1 1 0 0 0-1.414 1.414l2.5 2.5a1 1 0 0 0 1.414 0l4-4Z" />
+        </svg>
+        {% if predicted_class == 'Healthy' %}
+        <div class="flex justify-between items-center w-full">
+            <div class="text-white font-bold ml-4 text-lg">Yayy, Tanaman kamu Sehat/{{ predicted_class }}</div>
+            <div class="text-white text-right mr-4">Confidence score : {{confidence_score}}</div>
+        </div>
+        {% else %}
+        <div class="flex justify-between items-center w-full">
+            <div class="text-white font-bold ml-4 text-lg">Gawat!! Tanaman kamu terkena penyakit {{ predicted_class }}</div>
+            <div class="text-white text-right mr-4">Confidence score : {{confidence_score}}</div>
+        </div>
         {% endif %}
-
-        <!-- Tampilkan Hasil Deteksi -->
-        {% if predicted_class %}
-            <div class="mt-6">
-                <div class="text-lg font-bold">Hasil Deteksi:</div>
-                <div class="text-sm">Kelas: <strong>{{ predicted_class }}</strong></div>
-                <div class="text-sm">Akurasi: <strong>{{ "%.2f"|format(predicted_probability) }}%</strong></div>
-                <div class="mt-4 text-sm font-semibold">Probabilitas setiap kelas:</div>
-                <ul class="list-disc list-inside">
-                    {% for class_name, probability in probabilities.items() %}
-                        <li>{{ class_name }}: {{ "%.2f"|format(probability) }}%</li>
+    </div>
+    <!-- Rekomendasi Tips -->
+    <div class="w-full grid grid-cols-2 gap-4">
+        <div class="bg-white h-96 rounded-2xl shadow-xl">
+            <img src="data:image/png;base64,{{ img_base64 }}" alt="Uploaded Image" class="w-full h-full rounded-2xl">
+        </div>
+        <div class="h-96 rounded-2xl py-8 shadow-xl {% if predicted_class == 'Healthy' %}bg-healthy{% else %}bg-disease{% endif %}">
+            <div class="flex items-center px-4">
+                <img src="static/images/idea.png" alt="">
+                <div class="text-xl text-white font-bold">{{ handling_tip.title }}</div>
+            </div>
+            <div class="mt-4 text-white px-8">
+                <ul>
+                    {% for tip in handling_tip.tips %}
+                        <li>{{ tip }}</li>
                     {% endfor %}
                 </ul>
             </div>
-        {% endif %}
+        </div>
     </div>
-</body>
-</html>
+    {% endif %}
+</div>
