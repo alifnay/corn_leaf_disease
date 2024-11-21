@@ -8,11 +8,26 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
     <style>
         body {
             font-family: 'Poppins', sans-serif;
         }
+        .swiper-container {
+            width: 100%;
+            padding: 20px 0;
+        }
+        .swiper-slide {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
     </style>
+    
 </head>
 <body class="min-h-screen bg-gradient-to-b from-white to-[#FDFADB]">
     <!--Navbar-->
@@ -29,6 +44,9 @@
             <a href="{{ url_for('detection')}}" class="text-[#003B06] hover:scale-110 transition-transform">
                 Deteksi Penyakit
             </a>
+            <a href="" class="text-[#003B06] hover:scale-110 transition-transform">
+                Tentang Kami
+            </a>
         </div>
     </nav>
 
@@ -37,38 +55,6 @@
             {% include template%}
         {% endfor %}
     </main>
-
-    <footer>
-        <div class="max-w-7xl mx-auto pt-36 grid grid-cols-3 space-x-12">
-            <div class="grid-rows-2 space-y-4">
-                <div>
-                    <img src="static\images\logo.png" alt="">
-                </div>
-                <div>
-                    Merupakan sebuah aplikasi Web untuk membantu petani dan juga masyarakat yang ingin membudidayakan jagung. Kami memprioritaskan fitur yang mudah digunakan oleh siapapun dan dimanapun.
-                </div>
-            </div>
-            <div class="grid-rows-2 space-y-8">
-                <div class="font-semibold">Halaman</div>
-                <div>Deteksi Penyakit</div>
-            </div>
-            <div class="grid-rows-3 space-y-8">
-                <div class="font-semibold">Hubungi Kami</div>
-                <div>Jl. jalan mulu jadian kaga, Yogyakarta, London, Belgia</div>
-                <div class="grid grid-cols-2 font-light">
-                    <div>Telepon</div>
-                    <div>: +62-888-8888-888</div>
-                    <div>Office</div>
-                    <div>: 0274 444 44444</div>
-                    <div>Email</div>
-                    <div>: help@smartcorn.com</div>
-                </div>
-            </div>
-        </div>
-        <div class="bg-[#47AF64] h-20 mt-16 flex items-center justify-center">
-            <div class="font-bold text-white">Alif Naywa 2024</div>
-        </div>
-    </footer>
 </body>
 </html>
 
