@@ -1,8 +1,74 @@
-<div class="max-w-7xl mx-auto py-16">
-    <div class="grid grid-cols-2">
-        <div>
-            <div class="text-2xl">About</div>
+<div class="max-w-7xl mx-auto py-16 px-8">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+        <div class="space-y-6">
+            <div>
+                <h2 class="text-4xl font-bold text-[#3E8F5C]">Tentang Cornify</h2>
+            </div>
+            <p class="text-lg text-gray-600 leading-relaxed">
+                Cornify adalah aplikasi revolusioner yang dirancang khusus untuk membantu petani jagung menghadapi berbagai tantangan dalam pertanian modern. Dengan memanfaatkan teknologi kecerdasan buatan (AI), Cornify menawarkan solusi untuk mendeteksi penyakit tanaman dengan cepat dan akurat, memantau pertumbuhan tanaman, dan memprediksi hasil panen berdasarkan data cuaca.
+            </p>
+            <p class="text-lg text-gray-600 leading-relaxed">
+                Misi kami adalah memberdayakan petani melalui inovasi teknologi sehingga mereka dapat meningkatkan efisiensi, produktivitas, dan keberlanjutan dalam pertanian jagung.
+            </p>
+            <div>
+                <a href="{{ url_for('index') }}" class="px-6 py-3 bg-[#3E8F5C] text-white rounded-lg shadow-lg hover:bg-[#2E7047] transition-colors duration-300">
+                    Explore Features
+                </a>
+            </div>
         </div>
-        <div>image</div>
+
+        <div class="relative">
+            <img src="static\images\about_img.jpg" alt="About Cornify" class="rounded-lg shadow-lg object-cover w-full h-full">
+            <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-t from-[#3E8F5C] via-transparent to-transparent opacity-20 rounded-lg"></div>
+        </div>
+    </div>
+</div>
+<div class="max-w-7xl mx-auto py-16 px-8">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+        <div class="relative">
+            <img src="static/images/dev_img.jpg" alt="Developer Image" class="rounded-full shadow-lg object-cover w-96 h-96">
+            <!-- Overlay Dekoratif -->
+        </div>
+
+        <!-- Bagian Kanan: Informasi -->
+        <div class="space-y-6">
+            <!-- Judul -->
+            <div>
+                <h2 class="text-4xl font-bold text-[#3E8F5C]">Profil Developer</h2>
+            </div>
+            <!-- Deskripsi -->
+            <p class="text-lg text-gray-600 leading-relaxed">
+                Hi, saya <span class="font-semibold text-gray-800">Alif Naywa Azzikra</span>, seorang mahasiswa IT dari Universitas Negeri Yogyakarta. Saya adalah developer di balik aplikasi <span class="text-[#3E8F5C] font-semibold">Cornify</span>.
+            </p>
+            <p class="text-lg text-gray-600 leading-relaxed">
+                Dengan latar belakang di bidang teknologi dan minat dalam pertanian berkelanjutan, saya menciptakan Cornify untuk memberikan solusi modern kepada para petani. Saya percaya teknologi dapat menjadi jembatan untuk masa depan pertanian yang lebih baik.
+            </p>
+            <div class="text-[#3E8F5C] font-bold">Contact Me :</div>
+            <div class="flex gap-4">
+                <!-- LinkedIn -->
+                <a href="https://www.linkedin.com/in/alif-naywa-azzikra/" target="_blank" rel="noopener noreferrer" 
+                    class="text-[#3E8F5C] hover:text-[#2E7047] text-2xl transition-colors duration-300">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                
+                <!-- GitHub -->
+                <a href="https://github.com/alifnay" target="_blank" rel="noopener noreferrer" 
+                    class="text-[#3E8F5C] hover:text-[#2E7047] text-2xl transition-colors duration-300">
+                    <i class="fab fa-github"></i>
+                </a>
+                
+                <!-- Instagram -->
+                <a href="https://instagram.com/alifnaywa_" target="_blank" rel="noopener noreferrer" 
+                    class="text-[#3E8F5C] hover:text-[#2E7047] text-2xl transition-colors duration-300">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                
+                <!-- Email -->
+                <a href="mailto:naywaalif@gmail.com" 
+                    class="text-[#3E8F5C] hover:text-[#2E7047] text-2xl transition-colors duration-300">
+                    <i class="fas fa-envelope"></i>
+                </a>
+            </div>
+        </div>
     </div>
 </div>
