@@ -60,6 +60,10 @@ def preprocess_image(image):
 def index():
     return render_template('index.html', contents=['base.html'])
 
+@app.route('/about')
+def about():
+    return render_template('index.html', contents=['about.html'])
+
 @app.route('/detection', methods=['GET', 'POST'])
 def detection():
     if request.method == 'POST':

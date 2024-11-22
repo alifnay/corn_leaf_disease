@@ -26,8 +26,63 @@
     </div>
 
     <!--Deteksi Jagung-->
-    <div id="deteksi-penyakit" class="max-w-7xl mx-auto space-y-12 mt-12">
+    <div class="max-w-7xl mx-auto space-y-12 mt-12">
         <div class="flex space-x-12 items-center">
+            <div class="w-2 h-16 bg-[#FFCB39] rounded-lg"></div>
+            <div class="grid-rows-2">
+                <div class="text-xl font-semibold">
+                    Macam Penyakit
+                </div>
+                <div>
+                    Apa saja penyakit pada daun tanaman jagung?
+                </div>
+            </div>
+        </div>
+
+        <div class="max-w-5xl mx-auto grid grid-cols-3 gap-8">
+            <!-- Kartu 1 -->
+            <div class="h-96 bg-[#3E8F5C] shadow-lg hover:shadow-2xl transition-shadow duration-300 ease-in-out rounded-lg overflow-hidden group">
+                <!-- Bagian Gambar -->
+                <div class="h-full group-hover:h-1/2 transition-all duration-300 ease-in-out relative">
+                    <img src="static/images/hawar.jpg" alt="" class="w-full h-full object-cover group-hover:brightness-75 transition duration-300 ease-in-out">
+                </div>
+                <!-- Bagian Informasi -->
+                <div class="h-0 group-hover:h-1/2 text-white p-4 transition-all duration-300 ease-in-out">
+                    <div class="font-bold text-lg">Blight (Hawar)</div>
+                    <p class="text-sm mt-2">
+                    Ditandai dengan bercak kuning atau coklat pada daun yang dapat menyebabkan layu.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Kartu 2 -->
+            <div class="h-96 bg-[#3E8F5C] shadow-lg hover:shadow-2xl transition-shadow duration-300 ease-in-out rounded-lg overflow-hidden group">
+                <div class="h-full group-hover:h-1/2 transition-all duration-300 ease-in-out relative">
+                    <img src="static/images/karat.jpg" alt="" class="w-full h-full object-cover group-hover:brightness-75 transition duration-300 ease-in-out">
+                </div>
+                <div class="h-0 group-hover:h-1/2 text-white p-4 transition-all duration-300 ease-in-out">
+                    <div class="font-bold text-lg">Common Rust (Karat Daun)</div>
+                    <p class="text-sm mt-2">
+                    Ditandai dengan bintik merah atau coklat kecil pada daun, sering kali memanjang seiring waktu.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Kartu 3 -->
+            <div class="h-96 bg-[#3E8F5C] shadow-lg hover:shadow-2xl transition-shadow duration-300 ease-in-out rounded-lg overflow-hidden group">
+                <div class="h-full group-hover:h-1/2 transition-all duration-300 ease-in-out relative">
+                    <img src="static/images/daun_abu.png" alt="" class="w-full h-full object-cover group-hover:brightness-75 transition duration-300 ease-in-out">
+                </div>
+                <div class="h-0 group-hover:h-1/2 text-white p-4 transition-all duration-300 ease-in-out">
+                    <div class="font-bold text-lg">Gray Leaf (Bercak Daun Abu-Abu)</div>
+                    <p class="text-sm mt-2">
+                    Ditandai dengan bercak abu-abu memanjang di daun, sering kali menyebabkan kerusakan besar.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div id="deteksi-penyakit" class="flex space-x-12 items-center pt-16">
             <div class="w-2 h-16 bg-[#FFCB39] rounded-lg"></div>
             <div class="grid-rows-2">
                 <div class="text-xl font-semibold">
@@ -52,30 +107,64 @@
             </a>
         </div>
 
-        <!--Tentang Kami-->
-        <div class="max-w-7xl text-center space-y-4 py-28">
+<!--Kata Mereka-->
+        <div class="max-w-7xl mx-auto text-center space-y-12 py-28">
+            <!-- Judul -->
             <div class="flex justify-center text-3xl font-bold mb-8 gap-2">
-                Tentang
-                <div class="text-[#3E8F5C]">Kami</div> 
+                Kata
+                <div class="text-[#3E8F5C]">Mereka</div> 
             </div>
-            <div class="grid grid-cols-3 gap-4">
-                <div class="h-72 rounded-lg overflow-hidden">
-                    <img src="static\images\farmer_1.jpg" alt="Farmer 1" class="w-full h-full object-cover">
+
+            <!-- Grid Review -->
+            <div class="grid grid-cols-3 gap-8 px-8">
+                <!-- Review 1 -->
+                <div class="h-auto bg-white shadow-lg rounded-lg p-6 hover:shadow-xl transition-shadow duration-300 ease-in-out">
+                    <p class="text-sm text-gray-600 italic mb-4">
+                        "Aplikasi ini sangat membantu saya dalam mendeteksi penyakit tanaman jagung. Sangat akurat dan mudah digunakan. Terima kasih SmartCorn!"
+                    </p>
+                    <div class="font-bold text-[#3E8F5C]">- Budi Santoso</div>
                 </div>
-                <div class="h-72 rounded-lg overflow-hidden">
-                    <img src="static\images\farmer_2.jpg" alt="Farmer 2" class="w-full h-full object-cover">
+
+                <!-- Review 2 -->
+                <div class="h-auto bg-white shadow-lg rounded-lg p-6 hover:shadow-xl transition-shadow duration-300 ease-in-out">
+                    <p class="text-sm text-gray-600 italic mb-4">
+                        "Teknologi modern yang ditawarkan SmartCorn memberikan dampak positif pada hasil panen kami. Solusi ini luar biasa!"
+                    </p>
+                    <div class="font-bold text-[#3E8F5C]">- Siti Aisyah</div>
                 </div>
-                <div class="h-72 rounded-lg overflow-hidden">
-                    <img src="static\images\farmer_3.jpg" alt="Farmer 3" class="w-full h-full object-cover">
+
+                <!-- Review 3 -->
+                <div class="h-auto bg-white shadow-lg rounded-lg p-6 hover:shadow-xl transition-shadow duration-300 ease-in-out">
+                    <p class="text-sm text-gray-600 italic mb-4">
+                        "Dulu saya sering kesulitan mendeteksi penyakit tanaman. Dengan aplikasi ini, segalanya menjadi lebih mudah."
+                    </p>
+                    <div class="font-bold text-[#3E8F5C]">- Ahmad Fadli</div>
+                </div>
+
+                <!-- Review 4 (Baris kedua) -->
+                <div class="col-span-2 h-auto bg-white shadow-lg rounded-lg p-6 hover:shadow-xl transition-shadow duration-300 ease-in-out">
+                    <p class="text-sm text-gray-600 italic mb-4">
+                        "SmartCorn benar-benar inovatif. Solusi ini membantu meningkatkan efisiensi kerja di ladang jagung kami. Sangat direkomendasikan!"
+                    </p>
+                    <div class="font-bold text-[#3E8F5C]">- Nurul Hidayah</div>
+                </div>
+
+                <!-- Review 5 (Baris kedua) -->
+                <div class="col-span-1 h-auto bg-white shadow-lg rounded-lg p-6 hover:shadow-xl transition-shadow duration-300 ease-in-out">
+                    <p class="text-sm text-gray-600 italic mb-4">
+                        "Saya sangat puas dengan fitur pendeteksian penyakit yang ditawarkan. Sangat membantu untuk mengurangi risiko kerugian."
+                    </p>
+                    <div class="font-bold text-[#3E8F5C]">- Rudi Hartono</div>
                 </div>
             </div>
-            <div class="px-36">
-                SmartCorn merupakan aplikasi web yang mampu membantu petani meningkatkan hasil panen melalui teknologi modern. 
-                Dengan memanfaatkan kecerdasan buatan, SmartCorn menyediakan solusi untuk mendeteksi penyakit tanaman secara cepat dan akurat 
-                khususnya pada tanaman jagung. Tujuan kami adalah mendorong pertanian yang lebih efisien, berkelanjutan, 
-                dan menguntungkan bagi semua pihak.
+
+            <!-- Deskripsi Tambahan -->
+            <div class="px-36 text-gray-700">
+                SmartCorn telah dipercaya oleh banyak petani untuk meningkatkan produktivitas dan efisiensi pertanian. Kami berkomitmen untuk terus memberikan inovasi terbaik.
             </div>
         </div>
+
+
     </div>
 
     <footer>
