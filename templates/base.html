@@ -34,7 +34,7 @@
                     Macam Penyakit
                 </div>
                 <div>
-                    Apa saja penyakit pada daun tanaman jagung?
+                    Apa saja penyakit pada daun tanaman jagung yang dapat dideteksi?
                 </div>
             </div>
         </div>
@@ -94,7 +94,7 @@
             </div>
         </div>
 
-        <div class="relative">
+        <div class="relative shadow-xl rounded-lg">
             <div class="absolute inset-0 bg-gradient-to-r from-[#47AF64] to-transparent via-transparent via-30% to-90% [background-size:200%] h-full rounded-lg"></div>
             <img src="static/images/deteksi_jagung.png" alt="" class="w-full">    
         </div>
@@ -163,38 +163,57 @@
                 Cornify telah dipercaya oleh banyak petani untuk meningkatkan produktivitas dan efisiensi pertanian. Kami berkomitmen untuk terus memberikan inovasi terbaik.
             </div>
         </div>
-
-
     </div>
 
-    <footer>
-        <div class="max-w-7xl mx-auto pt-36 grid grid-cols-3 space-x-12">
-            <div class="grid-rows-2 space-y-4">
-                <div>
-                    <img src="static\images\logo.png" alt="" class="w-20 h-20">
-                </div>
-                <div>
-                    Merupakan sebuah aplikasi Web untuk membantu petani dan juga masyarakat yang ingin membudidayakan jagung. Kami memprioritaskan fitur yang mudah digunakan oleh siapapun dan dimanapun.
-                </div>
+    <footer class="bg-gray-900 text-white">
+        <div class="max-w-7xl mx-auto py-16 px-4 grid grid-cols-1 md:grid-cols-3 gap-12">
+            <!-- Bagian Deskripsi -->
+            <div class="space-y-4">
+                <img src="static/images/logo.png" alt="Cornify Logo" class="w-24 h-24">
+                <p class="text-gray-400 leading-relaxed">
+                    Merupakan aplikasi Web untuk membantu petani dan masyarakat yang ingin membudidayakan jagung. Kami memprioritaskan fitur yang mudah digunakan oleh siapapun dan dimanapun.
+                </p>
             </div>
-            <div class="grid-rows-2 space-y-8">
-                <div class="font-semibold">Halaman</div>
-                <div>Deteksi Penyakit</div>
+
+            <!-- Bagian Halaman -->
+            <div class="space-y-8">
+                <h2 class="font-semibold text-lg text-[#FFCB39]">Halaman</h2>
+                <ul class="space-y-4">
+                    <li>
+                        <a href="{{ url_for('detection')}}" class="hover:text-[#47AF64] transition-colors duration-300">Deteksi Penyakit</a>
+                    </li>
+                    <!-- Tambahkan link halaman lain -->
+                </ul>
             </div>
-            <div class="grid-rows-3 space-y-8">
-                <div class="font-semibold">Hubungi Kami</div>
-                <div>Jl. Menuju harapan, Yogyakarta, New Delhi, Brazil</div>
-                <div class="grid grid-cols-2 font-light">
-                    <div>Telepon</div>
-                    <div>: +62-888-8888-888</div>
-                    <div>Office</div>
-                    <div>: 0274 444 44444</div>
-                    <div>Email</div>
-                    <div>: help@cornify.com</div>
-                </div>
+
+            <!-- Bagian Hubungi Kami -->
+            <div class="space-y-8">
+                <h2 class="font-semibold text-lg text-[#FFCB39]">Hubungi Kami</h2>
+                <ul class="space-y-4 text-gray-400">
+                    <li class="flex items-center space-x-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-[#47AF64]" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 2C6.486 2 2 6.486 2 12c0 5.514 4.486 10 10 10s10-4.486 10-10c0-5.514-4.486-10-10-10zm1 17h-2v-2h2v2zm1.071-7.757l-.949.316v4.441h-2v-5.784l2.051-.684c.615-.204.949-.857.949-1.483 0-1.09-1.326-1.463-2-1.033-.235.15-.512.369-.801.662l-1.339-1.49c.455-.41.863-.699 1.286-.937 1.758-1.01 4.804.078 4.804 2.798 0 1.113-.684 2.066-1.951 2.536z"/>
+                        </svg>
+                        <span>Jl. Menuju Harapan, Yogyakarta, New Delhi, Brazil</span>
+                    </li>
+                    <li class="flex items-center space-x-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-[#47AF64]" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M3 3h18v18h-18v-18zm5 4h8v2h-8v-2zm0 4h8v2h-8v-2zm0 4h8v2h-8v-2z"/>
+                        </svg>
+                        <span>Telepon: +62-888-8888-888</span>
+                    </li>
+                    <li class="flex items-center space-x-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-[#47AF64]" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M2.013 5.575a.723.723 0 0 0-.013.108v8.633c0 .057.004.112.012.167l6.856-4.477-6.855-4.431zm8.19 5.346-6.999 4.576c.156.121.343.209.55.246.177.031.382.047.603.047h11.391c.221 0 .426-.016.603-.047.207-.037.394-.125.55-.246l-6.999-4.576-1.575 1.019c-.203.133-.469.133-.671 0l-1.575-1.019zm11.797-4.943-6.856 4.476 6.856 4.431c.008-.056.012-.111.012-.167v-8.633c0-.036-.005-.072-.013-.108zm-7.175 5.271 7.105-4.644c-.156-.137-.348-.244-.564-.307-.159-.048-.348-.081-.553-.081h-13.391c-.205 0-.394.033-.553.081-.216.063-.408.17-.564.307l7.105 4.644 1.642-1.064c.405-.262.94-.262 1.345 0l1.642 1.064z"/>
+                        </svg>
+                        <span>Email: <a href="mailto:help@cornify.com" class="hover:text-[#47AF64] transition-colors duration-300">help@cornify.com</a></span>
+                    </li>
+                </ul>
             </div>
         </div>
-        <div class="bg-[#47AF64] h-20 mt-16 flex items-center justify-center">
-            <div class="font-bold text-white">Alif Naywa 2024</div>
+
+        <!-- Bagian Copyright -->
+        <div class="bg-[#47AF64] h-12 flex items-center justify-center mt-12">
+            <p class="text-white font-bold">© 2024 Alif Naywa</p>
         </div>
     </footer>

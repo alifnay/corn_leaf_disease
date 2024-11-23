@@ -1,0 +1,84 @@
+<div class="max-w-7xl mx-auto py-16">
+    <h1 class="text-3xl font-bold text-[#FFCB39] mb-8">Informasi Penyakit Tanaman Jagung</h1>
+    
+    <!-- Dropdown untuk memilih penyakit -->
+    <div class="mb-8">
+        <label for="disease-select" class="block text-lg font-medium text-gray-700">Pilih Penyakit:</label>
+        <select id="disease-select" class="mt-2 block w-full px-4 py-2 bg-white border border-gray-300 rounded-lg shadow-sm focus:ring-[#FFCB39] focus:border-[#FFCB39]">
+            <option value="" disabled selected>Pilih salah satu...</option>
+            <option value="blight">Blight (Hawar Daun)</option>
+            <option value="rust">Rust (Karat Daun)</option>
+            <option value="leafspot">Leaf Spot (Bercak Daun)</option>
+        </select>
+    </div>
+
+    <!-- Kontainer Informasi Penyakit -->
+    <div id="disease-info" class="hidden bg-[#E6F1E8] rounded-lg p-6 shadow-lg">
+        <h2 id="disease-title" class="text-2xl font-bold text-[#FFCB39]"></h2>
+        <p id="disease-description" class="mt-4 text-gray-700"></p>
+        
+        <!-- Video YouTube -->
+        <div id="disease-video" class="mt-6">
+            <iframe id="youtube-video" width="100%" height="315" class="rounded-lg shadow-md" src="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+    </div>
+</div>
+
+<script>
+// Data untuk setiap penyakit
+const diseases = {
+    blight: {
+        title: "Blight (Hawar Daun)",
+        description: `
+            Blight atau Hawar Daun adalah penyakit yang disebabkan oleh infeksi jamur atau bakteri, sering kali dari genus Alternaria atau Phytophthora. 
+            Penyakit ini ditandai dengan munculnya bercak besar berwarna coklat kehitaman pada daun jagung, yang dapat menyebar dengan cepat di kondisi yang lembap dan hangat. 
+            Jika tidak segera ditangani, infeksi dapat merusak jaringan daun secara signifikan, mengurangi kemampuan tanaman untuk melakukan fotosintesis. 
+            Gejala lainnya termasuk layu pada daun yang terinfeksi, pengeringan jaringan daun, dan pada akhirnya kematian tanaman. 
+            Pencegahan dapat dilakukan dengan menggunakan varietas jagung yang tahan penyakit, menjaga sirkulasi udara di sekitar tanaman, serta mengurangi kelembapan dengan cara irigasi yang tepat.`,
+        video: "https://www.youtube.com/embed/dummy_video_blight"
+    },
+    rust: {
+        title: "Rust (Karat Daun)",
+        description: `
+            Rust atau Karat Daun adalah penyakit yang disebabkan oleh infeksi jamur dari genus Puccinia, yang menyerang daun dan batang tanaman jagung. 
+            Penyakit ini menghasilkan pustula kecil berwarna oranye atau coklat yang tampak seperti karat pada permukaan daun. 
+            Infeksi ini mengurangi kemampuan tanaman untuk melakukan fotosintesis secara optimal, yang dapat mengakibatkan pengurangan hasil panen. 
+            Karat daun biasanya menyebar dengan cepat di area dengan curah hujan tinggi dan suhu hangat. 
+            Pengendalian dapat dilakukan dengan menggunakan fungisida yang tepat, melakukan rotasi tanaman, serta membersihkan sisa-sisa tanaman yang terinfeksi setelah panen.`,
+        video: "https://www.youtube.com/embed/dummy_video_rust"
+    },
+    leafspot: {
+        title: "Leaf Spot (Bercak Daun)",
+        description: `
+            Leaf Spot atau Bercak Daun adalah penyakit yang disebabkan oleh infeksi jamur, seperti Cercospora atau Helminthosporium. 
+            Gejala utamanya adalah munculnya bercak kecil berwarna coklat hingga abu-abu pada daun tanaman jagung. 
+            Bercak-bercak ini sering kali dikelilingi oleh halo kuning, yang dapat menyebar dan bergabung menjadi bercak yang lebih besar jika kondisi lingkungan mendukung, seperti kelembapan tinggi dan suhu hangat. 
+            Penyakit ini dapat menyebabkan daun mengering lebih cepat dan memperburuk kemampuan tanaman untuk menghasilkan biji yang sehat. 
+            Pengendalian dilakukan dengan penggunaan varietas yang tahan, rotasi tanaman, sanitasi lahan, dan penggunaan fungisida bila diperlukan.`,
+        video: "https://www.youtube.com/embed/dummy_video_leafspot"
+    }
+};
+
+
+    // Elemen HTML
+    const diseaseSelect = document.getElementById("disease-select");
+    const diseaseInfo = document.getElementById("disease-info");
+    const diseaseTitle = document.getElementById("disease-title");
+    const diseaseDescription = document.getElementById("disease-description");
+    const youtubeVideo = document.getElementById("youtube-video");
+
+    // Event Listener untuk Dropdown
+    diseaseSelect.addEventListener("change", (event) => {
+        const selectedDisease = event.target.value;
+
+        if (selectedDisease && diseases[selectedDisease]) {
+            // Update Informasi
+            diseaseTitle.textContent = diseases[selectedDisease].title;
+            diseaseDescription.textContent = diseases[selectedDisease].description;
+            youtubeVideo.src = diseases[selectedDisease].video;
+
+            // Tampilkan Kontainer
+            diseaseInfo.classList.remove("hidden");
+        }
+    });
+</script>

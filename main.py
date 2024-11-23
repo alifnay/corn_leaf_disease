@@ -64,6 +64,10 @@ def index():
 def about():
     return render_template('index.html', contents=['about.html'])
 
+@app.route('/information')
+def information():
+    return render_template('index.html', contents=['information.html'])
+
 @app.route('/detection', methods=['GET', 'POST'])
 def detection():
     if request.method == 'POST':

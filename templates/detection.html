@@ -1,13 +1,3 @@
-<style>
-    .bg-healthy {
-        background-color: #3E8F5C;
-        opacity: 50%;
-    }
-    .bg-disease {
-        background-color: #FF0000;
-        opacity: 50%;
-    }
-</style>
 <div class="max-w-7xl mx-auto py-16 space-y-12">
     <div class="flex space-x-12 items-center">
         <div class="w-2 h-16 bg-[#FFCB39] rounded-lg"></div>
@@ -33,6 +23,8 @@
                 </label>
                 <!-- Input file tersembunyi -->
                 <input type="file" name="file" id="file-upload" class="hidden" />
+                <!-- Informasi file yang dipilih -->
+                <span id="file-name" class="text-gray-500 text-sm"></span>
             </div>
             <button type="submit" class="bg-[#FFCB39] text-white font-medium px-6 py-3 rounded-lg hover:bg-[#E6B832]">
                 Deteksi
@@ -78,10 +70,10 @@
     </div>
     <!-- Rekomendasi Tips -->
     <div class="w-full grid grid-cols-2 gap-4">
-        <div class="bg-white h-96 rounded-2xl shadow-xl">
+        <div class="bg-white h-[450px] rounded-2xl shadow-xl">
             <img src="data:image/png;base64,{{ img_base64 }}" alt="Uploaded Image" class="w-full h-full rounded-2xl">
         </div>
-        <div class="h-96 rounded-2xl py-8 shadow-xl {% if predicted_class == 'Healthy' %}bg-healthy{% else %}bg-disease{% endif %}">
+        <div class="h-[450px] rounded-2xl py-8 shadow-xl {% if predicted_class == 'Healthy' %}bg-healthy{% else %}bg-disease{% endif %}">
             <div class="flex items-center px-4">
                 <img src="static/images/idea.png" alt="">
                 <div class="text-xl text-white font-bold">{{ handling_tip.title }}</div>
@@ -91,9 +83,51 @@
                     {% for tip in handling_tip.tips %}
                         <li>{{ tip }}</li>
                     {% endfor %}
+                    <div class="mt-8">
+                        <a href="{{ url_for('information') }}" class="bg-white text-black border-2 border-[#FFCB39] font-medium px-4 py-2 rounded-lg hover:bg-[#FFCB39] hover:text-white cursor-pointer">
+                            Selengkapnya
+                        </a>
+                    </div>
                 </ul>
             </div>
         </div>
     </div>
     {% endif %}
 </div>
+
+<div id="upload-warning" class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+    <div class="bg-white rounded-lg p-8 shadow-xl text-center">
+        <h2 class="text-xl font-semibold text-red-500 mb-4">File belum diunggah!</h2>
+        <p class="text-gray-600">Harap unggah file sebelum melanjutkan.</p>
+        <button id="close-warning" class="mt-4 bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600">
+            OK
+        </button>
+    </div>
+</div>
+
+
+<script>
+    const fileUpload = document.getElementById('file-upload');
+    const fileName = document.getElementById('file-name');
+    const form = document.getElementById('upload-form');
+    const warningModal = document.getElementById('upload-warning');
+    const closeWarning = document.getElementById('close-warning');
+
+    fileUpload.addEventListener('change', (event) => {
+        const file = event.target.files[0];
+        if (file) {
+            fileName.textContent = `File dipilih: ${file.name}`;
+        } else {
+            fileName.textContent = '';
+        }
+    });
+    form.addEventListener('submit', (event) => {
+        if (!fileUpload.files.length) {
+            event.preventDefault(); // Mencegah form terkirim
+            warningModal.classList.remove('hidden'); // Tampilkan modal
+        }
+    });
+    closeWarning.addEventListener('click', () => {
+        warningModal.classList.add('hidden'); // Sembunyikan modal
+    });
+</script>
