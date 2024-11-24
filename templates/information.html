@@ -1,84 +1,113 @@
-<div class="max-w-7xl mx-auto py-16">
-    <h1 class="text-3xl font-bold text-[#FFCB39] mb-8">Informasi Penyakit Tanaman Jagung</h1>
-    
-    <!-- Dropdown untuk memilih penyakit -->
-    <div class="mb-8">
-        <label for="disease-select" class="block text-lg font-medium text-gray-700">Pilih Penyakit:</label>
-        <select id="disease-select" class="mt-2 block w-full px-4 py-2 bg-white border border-gray-300 rounded-lg shadow-sm focus:ring-[#FFCB39] focus:border-[#FFCB39]">
-            <option value="" disabled selected>Pilih salah satu...</option>
-            <option value="blight">Blight (Hawar Daun)</option>
-            <option value="rust">Rust (Karat Daun)</option>
-            <option value="leafspot">Leaf Spot (Bercak Daun)</option>
-        </select>
-    </div>
+<div class="max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:px-8">
+    <h1 class="text-3xl font-bold text-[#3E8F5C] mb-8 text-center">
+        Informasi Penyakit Tanaman Jagung
+    </h1>
 
-    <!-- Kontainer Informasi Penyakit -->
-    <div id="disease-info" class="hidden bg-[#E6F1E8] rounded-lg p-6 shadow-lg">
-        <h2 id="disease-title" class="text-2xl font-bold text-[#FFCB39]"></h2>
-        <p id="disease-description" class="mt-4 text-gray-700"></p>
-        
-        <!-- Video YouTube -->
-        <div id="disease-video" class="mt-6">
-            <iframe id="youtube-video" width="100%" height="315" class="rounded-lg shadow-md" src="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <!-- Section untuk setiap penyakit -->
+    <div class="space-y-8">
+        <!-- Blight -->
+        <div onclick="toggleSection('blight-section')" 
+            class="cursor-pointer bg-[#E6F1E8] rounded-lg shadow-lg overflow-hidden transition transform hover:scale-105">
+            <div class="p-6 flex justify-between items-center">
+                <h2 class="text-xl font-bold text-[#3E8F5C]">Blight (Hawar Daun)</h2>
+                <svg id="blight-icon" xmlns="http://www.w3.org/2000/svg" 
+                    class="h-6 w-6 text-[#3E8F5C] transition-transform transform" 
+                    fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
+                        d="M19 9l-7 7-7-7" />
+                </svg>
+            </div>
+            <div id="blight-section" class="hidden transition-all duration-300 ease-in-out">
+                <div class="p-6">
+                    <p class="text-gray-700">
+                        Blight atau Hawar Daun adalah penyakit yang disebabkan oleh infeksi jamur atau bakteri, sering kali dari genus Alternaria atau Phytophthora. Penyakit ini biasanya berkembang di lingkungan dengan kelembapan tinggi dan suhu hangat, membuatnya sangat umum di daerah tropis seperti Indonesia. Gejala utamanya meliputi munculnya bercak coklat kehitaman yang cepat menyebar pada daun jagung, yang kemudian dapat menyebabkan pengeringan dan kematian jaringan daun secara keseluruhan.
+
+                        Dampak dari Blight dapat sangat signifikan, terutama jika tidak ditangani secara tepat. Penurunan kemampuan fotosintesis akibat rusaknya jaringan daun dapat menyebabkan penurunan produktivitas tanaman secara drastis. Untuk mencegah penyakit ini, petani disarankan untuk menggunakan varietas jagung yang tahan penyakit, menjaga sirkulasi udara di antara tanaman, serta menghindari penyiraman berlebihan yang dapat meningkatkan kelembapan. Selain itu, penggunaan fungisida yang sesuai dan rotasi tanaman juga sangat dianjurkan.                    </p>
+                    <div class="mt-6">
+                        <iframe width="100%" height="400px" class="rounded-lg shadow-md" 
+                                src="https://www.youtube.com/embed/qSadBz0Txk0" frameborder="0" 
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                allowfullscreen>
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Rust -->
+        <div onclick="toggleSection('rust-section')" 
+            class="cursor-pointer bg-[#E6F1E8] rounded-lg shadow-lg overflow-hidden transition transform hover:scale-105">
+            <div class="p-6 flex justify-between items-center">
+                <h2 class="text-xl font-bold text-[#3E8F5C]">Rust (Karat Daun)</h2>
+                <svg id="rust-icon" xmlns="http://www.w3.org/2000/svg" 
+                    class="h-6 w-6 text-[#3E8F5C] transition-transform transform" 
+                    fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
+                        d="M19 9l-7 7-7-7" />
+                </svg>
+            </div>
+            <div id="rust-section" class="hidden transition-all duration-300 ease-in-out">
+                <div class="p-6">
+                    <p class="text-gray-700">
+                        Rust atau Karat Daun adalah penyakit yang disebabkan oleh infeksi jamur dari genus Puccinia. Penyakit ini sering kali muncul dalam bentuk pustula kecil berwarna oranye atau coklat yang menyerupai karat pada permukaan daun jagung. Karat daun dapat menyebar dengan cepat melalui angin, sehingga sering menjadi ancaman besar bagi petani yang tidak segera mengambil tindakan pencegahan.
+
+                        Dampaknya pada tanaman meliputi penurunan efisiensi fotosintesis karena jaringan daun yang rusak. Jika dibiarkan, Rust dapat mengurangi hasil panen secara signifikan. Untuk mencegah dan mengelola penyakit ini, petani dapat menggunakan fungisida berbasis sulfur atau tembaga, menjaga kebersihan lahan dengan menghilangkan sisa-sisa tanaman yang terinfeksi, serta menerapkan rotasi tanaman untuk mengurangi risiko penyebaran jamur.                    </p>
+                    <div class="mt-6">
+                        <iframe width="100%" height="400px" class="rounded-lg shadow-md" 
+                                src="https://www.youtube.com/embed/eKQO4-kqLho" frameborder="0" 
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                allowfullscreen>
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Gray Leaf Spot -->
+        <div onclick="toggleSection('grayleafspot-section')" 
+            class="cursor-pointer bg-[#E6F1E8] rounded-lg shadow-lg overflow-hidden transition transform hover:scale-105">
+            <div class="p-6 flex justify-between items-center">
+                <h2 class="text-xl font-bold text-[#3E8F5C]">Gray Leaf Spot (Bercak Abu-abu)</h2>
+                <svg id="grayleafspot-icon" xmlns="http://www.w3.org/2000/svg" 
+                    class="h-6 w-6 text-[#3E8F5C] transition-transform transform" 
+                    fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
+                        d="M19 9l-7 7-7-7" />
+                </svg>
+            </div>
+            <div id="grayleafspot-section" class="hidden transition-all duration-300 ease-in-out">
+                <div class="p-6">
+                    <p class="text-gray-700">
+                        Leaf Spot atau Bercak Daun adalah penyakit yang disebabkan oleh infeksi jamur seperti Cercospora atau bakteri tertentu. Penyakit ini ditandai dengan munculnya bercak kecil berwarna coklat hingga abu-abu pada permukaan daun jagung. Dalam kondisi yang lembap dan hangat, bercak-bercak ini dapat menyebar dengan cepat dan membesar, menyebabkan daun menjadi kering dan akhirnya mati.
+
+                        Kehilangan daun yang terkena Leaf Spot dapat memengaruhi produktivitas tanaman secara keseluruhan, karena fotosintesis yang terganggu. Untuk mengurangi risiko penyakit ini, penting bagi petani untuk menjaga sanitasi lahan, menghindari kepadatan tanaman yang berlebihan, serta menggunakan varietas jagung yang tahan penyakit. Fungisida berbasis tembaga atau bahan kimia lain yang sesuai juga bisa digunakan untuk mengendalikan penyebaran Leaf Spot.                    </p>
+                    <div class="mt-6">
+                        <iframe width="100%" height="400px" class="rounded-lg shadow-md" 
+                                src="https://www.youtube.com/embed/1foL4zGaDAE" frameborder="0" 
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                allowfullscreen>
+                        </iframe>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>
 
 <script>
-// Data untuk setiap penyakit
-const diseases = {
-    blight: {
-        title: "Blight (Hawar Daun)",
-        description: `
-            Blight atau Hawar Daun adalah penyakit yang disebabkan oleh infeksi jamur atau bakteri, sering kali dari genus Alternaria atau Phytophthora. 
-            Penyakit ini ditandai dengan munculnya bercak besar berwarna coklat kehitaman pada daun jagung, yang dapat menyebar dengan cepat di kondisi yang lembap dan hangat. 
-            Jika tidak segera ditangani, infeksi dapat merusak jaringan daun secara signifikan, mengurangi kemampuan tanaman untuk melakukan fotosintesis. 
-            Gejala lainnya termasuk layu pada daun yang terinfeksi, pengeringan jaringan daun, dan pada akhirnya kematian tanaman. 
-            Pencegahan dapat dilakukan dengan menggunakan varietas jagung yang tahan penyakit, menjaga sirkulasi udara di sekitar tanaman, serta mengurangi kelembapan dengan cara irigasi yang tepat.`,
-        video: "https://www.youtube.com/embed/dummy_video_blight"
-    },
-    rust: {
-        title: "Rust (Karat Daun)",
-        description: `
-            Rust atau Karat Daun adalah penyakit yang disebabkan oleh infeksi jamur dari genus Puccinia, yang menyerang daun dan batang tanaman jagung. 
-            Penyakit ini menghasilkan pustula kecil berwarna oranye atau coklat yang tampak seperti karat pada permukaan daun. 
-            Infeksi ini mengurangi kemampuan tanaman untuk melakukan fotosintesis secara optimal, yang dapat mengakibatkan pengurangan hasil panen. 
-            Karat daun biasanya menyebar dengan cepat di area dengan curah hujan tinggi dan suhu hangat. 
-            Pengendalian dapat dilakukan dengan menggunakan fungisida yang tepat, melakukan rotasi tanaman, serta membersihkan sisa-sisa tanaman yang terinfeksi setelah panen.`,
-        video: "https://www.youtube.com/embed/dummy_video_rust"
-    },
-    leafspot: {
-        title: "Leaf Spot (Bercak Daun)",
-        description: `
-            Leaf Spot atau Bercak Daun adalah penyakit yang disebabkan oleh infeksi jamur, seperti Cercospora atau Helminthosporium. 
-            Gejala utamanya adalah munculnya bercak kecil berwarna coklat hingga abu-abu pada daun tanaman jagung. 
-            Bercak-bercak ini sering kali dikelilingi oleh halo kuning, yang dapat menyebar dan bergabung menjadi bercak yang lebih besar jika kondisi lingkungan mendukung, seperti kelembapan tinggi dan suhu hangat. 
-            Penyakit ini dapat menyebabkan daun mengering lebih cepat dan memperburuk kemampuan tanaman untuk menghasilkan biji yang sehat. 
-            Pengendalian dilakukan dengan penggunaan varietas yang tahan, rotasi tanaman, sanitasi lahan, dan penggunaan fungisida bila diperlukan.`,
-        video: "https://www.youtube.com/embed/dummy_video_leafspot"
-    }
-};
+    // Fungsi untuk toggle tampilan section dengan animasi
+    function toggleSection(sectionId) {
+        const section = document.getElementById(sectionId);
+        const icon = document.getElementById(sectionId.replace('section', 'icon'));
 
-
-    // Elemen HTML
-    const diseaseSelect = document.getElementById("disease-select");
-    const diseaseInfo = document.getElementById("disease-info");
-    const diseaseTitle = document.getElementById("disease-title");
-    const diseaseDescription = document.getElementById("disease-description");
-    const youtubeVideo = document.getElementById("youtube-video");
-
-    // Event Listener untuk Dropdown
-    diseaseSelect.addEventListener("change", (event) => {
-        const selectedDisease = event.target.value;
-
-        if (selectedDisease && diseases[selectedDisease]) {
-            // Update Informasi
-            diseaseTitle.textContent = diseases[selectedDisease].title;
-            diseaseDescription.textContent = diseases[selectedDisease].description;
-            youtubeVideo.src = diseases[selectedDisease].video;
-
-            // Tampilkan Kontainer
-            diseaseInfo.classList.remove("hidden");
+        if (section.classList.contains("hidden")) {
+            section.classList.remove("hidden");
+            section.style.maxHeight = section.scrollHeight + "px";
+            icon.classList.add("rotate-180");
+        } else {
+            section.style.maxHeight = 0;
+            setTimeout(() => section.classList.add("hidden"), 300);
+            icon.classList.remove("rotate-180");
         }
-    });
+    }
 </script>
